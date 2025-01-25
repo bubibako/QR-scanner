@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QR_scanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ygt-Ih-oHO" userLabel="Camera View">
+                                <rect key="frame" x="76" y="124" width="241" height="234"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="86w-qZ-2NR">
+                                <rect key="frame" x="76" y="424" width="241" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Swf-9Z-4oK"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="45" id="1ak-Mf-5qT">
+                                        <rect key="frame" x="0.0" y="50" width="241" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1ak-Mf-5qT" id="XL0-1J-KKi">
+                                            <rect key="frame" x="0.0" y="0.0" width="241" height="45"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="YDn-xe-15e"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="35J-li-cj4"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YoI-p9-Cnz">
+                                <rect key="frame" x="127" y="693" width="139" height="78"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="teZ-g9-sgq"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Scan"/>
+                                <connections>
+                                    <action selector="startScanning:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OAk-Ud-RFq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YoI-p9-Cnz" firstAttribute="centerX" secondItem="Ygt-Ih-oHO" secondAttribute="centerX" id="4bX-mX-dh0"/>
+                            <constraint firstItem="Ygt-Ih-oHO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="65" id="5JE-T0-gxa"/>
+                            <constraint firstItem="YoI-p9-Cnz" firstAttribute="centerX" secondItem="86w-qZ-2NR" secondAttribute="centerX" id="8tr-we-xMF"/>
+                            <constraint firstItem="YoI-p9-Cnz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FL3-J1-Rpl"/>
+                            <constraint firstItem="86w-qZ-2NR" firstAttribute="leading" secondItem="Ygt-Ih-oHO" secondAttribute="leading" id="Itg-uu-xdG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YoI-p9-Cnz" secondAttribute="bottom" constant="47" id="LYK-2v-TKf"/>
+                            <constraint firstItem="86w-qZ-2NR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="P7d-mz-s7w"/>
+                            <constraint firstItem="86w-qZ-2NR" firstAttribute="top" secondItem="Ygt-Ih-oHO" secondAttribute="bottom" constant="66" id="cOd-yQ-Cdi"/>
+                            <constraint firstItem="86w-qZ-2NR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="424" id="reR-Dp-u3H"/>
+                            <constraint firstItem="YoI-p9-Cnz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="127" id="stK-gI-L2d"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cameraView" destination="Ygt-Ih-oHO" id="k88-KN-Zz2"/>
+                        <outlet property="historyTableView" destination="86w-qZ-2NR" id="q6h-at-M3j"/>
+                        <outlet property="scanButton" destination="YoI-p9-Cnz" id="re1-rN-tyf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
