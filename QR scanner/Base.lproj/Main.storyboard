@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ygt-Ih-oHO" userLabel="Camera View">
-                                <rect key="frame" x="76" y="124" width="241" height="234"/>
+                                <rect key="frame" x="35" y="76" width="323" height="282"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="86w-qZ-2NR">
@@ -53,20 +53,32 @@
                                     <action selector="startScanning:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OAk-Ud-RFq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Be7-wL-7xB">
+                                <rect key="frame" x="302" y="700" width="75" height="64"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Flash"/>
+                                <connections>
+                                    <action selector="Flashlight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nch-z8-fEw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="YoI-p9-Cnz" firstAttribute="centerX" secondItem="Ygt-Ih-oHO" secondAttribute="centerX" id="4bX-mX-dh0"/>
-                            <constraint firstItem="Ygt-Ih-oHO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="65" id="5JE-T0-gxa"/>
+                            <constraint firstItem="Ygt-Ih-oHO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="17" id="5JE-T0-gxa"/>
                             <constraint firstItem="YoI-p9-Cnz" firstAttribute="centerX" secondItem="86w-qZ-2NR" secondAttribute="centerX" id="8tr-we-xMF"/>
                             <constraint firstItem="YoI-p9-Cnz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FL3-J1-Rpl"/>
-                            <constraint firstItem="86w-qZ-2NR" firstAttribute="leading" secondItem="Ygt-Ih-oHO" secondAttribute="leading" id="Itg-uu-xdG"/>
+                            <constraint firstItem="86w-qZ-2NR" firstAttribute="leading" secondItem="Ygt-Ih-oHO" secondAttribute="leading" constant="41" id="Itg-uu-xdG"/>
+                            <constraint firstItem="Be7-wL-7xB" firstAttribute="leading" secondItem="YoI-p9-Cnz" secondAttribute="trailing" constant="36" id="LKy-mp-6kk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YoI-p9-Cnz" secondAttribute="bottom" constant="47" id="LYK-2v-TKf"/>
                             <constraint firstItem="86w-qZ-2NR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="P7d-mz-s7w"/>
+                            <constraint firstItem="Be7-wL-7xB" firstAttribute="centerY" secondItem="YoI-p9-Cnz" secondAttribute="centerY" id="PXP-4G-l9V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Be7-wL-7xB" secondAttribute="bottom" constant="54" id="RIa-oT-gCK"/>
                             <constraint firstItem="86w-qZ-2NR" firstAttribute="top" secondItem="Ygt-Ih-oHO" secondAttribute="bottom" constant="66" id="cOd-yQ-Cdi"/>
                             <constraint firstItem="86w-qZ-2NR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="424" id="reR-Dp-u3H"/>
                             <constraint firstItem="YoI-p9-Cnz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="127" id="stK-gI-L2d"/>
+                            <constraint firstItem="Be7-wL-7xB" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="xnh-dM-kcI"/>
                         </constraints>
                     </view>
                     <connections>

@@ -14,6 +14,26 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
     @IBOutlet weak var historyTableView: UITableView!
     @IBOutlet weak var scanButton: UIButton!
     
+    @IBAction func Flashlight(_ sender: UIButton) {
+        guard let device = AVCaptureDevice.default(for: .video), device.hasTorch else {
+            print("Flashlight not available")
+            return
+        }
+        do {
+            try device.lockForConfiguration()
+            if device.torchMode == .on {
+                device.torchMode = .off
+                sender.setTitle("Flashlight Off", for: .normal)
+            } else {
+                try device.setTorchModeOn(level: 1.0)
+                sender.setTitle("Flashlight On", for: .normal)
+            }
+            device.unlockForConfiguration()
+            }
+        catch {
+            print("Error with Flashlight")
+        }
+    }
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     var scannedCodes: [String] = []
@@ -81,7 +101,6 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
             scannedCodes.append(code)
             historyTableView.reloadData()
         }
-        // Открытие ссылки, если код — URL
         if let url = URL(string: code), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         } else {
@@ -90,8 +109,6 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
             present(alert, animated: true)
         }
     }
-    
-    // MARK: - TableView DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return scannedCodes.count
     }
